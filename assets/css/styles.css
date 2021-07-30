@@ -81,4 +81,32 @@
     font-family: monospace;
    }
 
+   .btn:hover{
+       background-color:white;
+   }
    
+   .productos {
+       margin-top:0px;
+       overflow: hidden;
+       justify-content: center;
+       text-align: center
+   }
+
+   .producto{
+      color: black;
+      background-color:var(--primaryColor);
+      text-align: center;
+      float: left;
+      width:27%;
+      height:380px;
+      margin:40px;
+
+   }
+
+   .producto_imagen {
+       width:150px;
+       height:auto;
+       overflow: hidden;
+       padding-top: 14%;
+       padding-bottom: 5%;
+   }
