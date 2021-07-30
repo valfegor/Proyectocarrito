@@ -3,7 +3,8 @@
     margin: 0px;
     padding: 0px;
    }
-   
+   @import url('https://fonts.googleapis.com/css2?family=Palette+Mosaic&display=swap');
+
    :root{
     --primaryColor: rgba(86, 20, 9, 0.877);
     --mainWhite: rgba(255, 255, 255, 0.04);
@@ -20,7 +21,9 @@
     top:5px;
     margin-right: 40px;
     margin-left: 10px;
-   font-size: 25px;
+   font-size: 30px;
+   font-family: 'Palette Mosaic', cursive;
+   text-transform: uppercase;
    }
    
    .navbar{
@@ -34,8 +37,10 @@
    }
    
    .topnav{
-    margin-left: 300px;
+    margin-left: 400px;
      background-color: var(--primaryColor);
+     
+     
    }
    
    .topnav a{
@@ -45,7 +50,7 @@
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-    font-size: 12px;
+    font-size: 22px;
    }
    
    .topnav a:hover {
@@ -86,30 +91,48 @@
    }
    
    .productos {
-       display: flex;
-       flex-wrap: wrap;
-       margin-top:0px;
-       overflow: hidden;
-       justify-content: center;
-       text-align: center
+    margin-top: 0px;
+    overflow: hidden;
+    justify-content: center;
+    text-align: center;
        
    }
 
    .producto{
-      color: black;
-      background-color:var(--primaryColor);
-      text-align: center;
-      float: left;
-      width:27%;
-      height:380px;
-      margin:40px;
+    color: black;
+    background-color: var(--primaryColor);
+    text-align: center;
+    float: left;
+    width: 27%;
+    height: 380px;
+    margin: 40px;
+   
 
    }
 
    .producto_imagen {
-       width:150px;
-       height:auto;
-       overflow: hidden;
-       padding-top: 14%;
-       padding-bottom: 5%;
+    width: 150px;
+ height: auto;
+ overflow: hidden;
+ padding-top: 14%;
+ padding-bottom: 5%;
+   }
+
+   /*
+   Carrito icono
+   */
+
+   .carrito-info {
+       color: #333;
+       border-radius: 0.25rem;
+       padding : 0.01rem 0.9rem;
+       cursor: pointer;
+       position: absolute;
+       margin-right: 0%;
+       margin-left: 92%;
+   }
+
+   .carrito-info-icono:hover{
+    color:gray;
+
    }
