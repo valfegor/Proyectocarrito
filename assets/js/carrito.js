@@ -12,3 +12,28 @@
     })
 
 })();
+
+
+//funcion para iniciar en el DOM es decir si no se ha cargado ejecuta la funcion.
+
+if(document.readyState="loading"){
+    document.addEventListener("DOMContentLoaded",ready);
+}
+else{
+    ready();
+}
+
+//creacion de la funcion READY que se va a ejecutar.
+
+function ready(){
+    //añadimos los botones para que al dar clic.
+    let añadirCarritoBotones = document.getElementsByClassName('añadir-carrito');
+    //para todos los botones
+    for(let i =0 ; i<añadirCarritoBotones.length;i++){
+        //añado una variable que contenga todos los botones.
+        let boton = añadirCarritoBotones[i];
+        boton.addEventListener("click",function(){
+
+        })
+    }
+}
