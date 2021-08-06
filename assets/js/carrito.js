@@ -56,7 +56,10 @@ function añadirItems(e){
     //es decir independientemente de todas las clases que existen dentro de la pagina ese contenedor solo tiene esa clase no tiene mas
     //por lo tanto es correcto usarlo de esta manera
     let titulo = producto.getElementsByClassName("producto_titulo")[0].innerText;
-    console.log(titulo);
+    let precio = producto.getElementsByClassName("producto_precio")[0].innerText;
+    //recordando tambien podemos obtener la imagen.
+    let img = producto.getElementsByClassName("producto_imagen")[0].src;
+    console.log(titulo,precio,img);
 
 
 }
