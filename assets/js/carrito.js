@@ -32,8 +32,26 @@ function ready(){
     for(let i =0 ; i<añadirCarritoBotones.length;i++){
         //añado una variable que contenga todos los botones.
         let boton = añadirCarritoBotones[i];
-        boton.addEventListener("click",function(){
-
-        })
+        //se pasa la funcion para añadir los items al carrito
+        boton.addEventListener("click",añadirItems)
     }
+
+    //funcion para cuando demos clic al boton de comprar
+    //se pasa el 0 por que es solamente 1 elemento es decir solo tenemos 1 boton
+    document.getElementsByClassName("btn-purchase")[0].addEventListener('click',comprar);
+}
+
+//Esta funcion es ejecutada cuando el usuario da clic a los botones de comprar
+function añadirItems(e){
+    //creo la variable boton que va a contener la informacion de donde hagamos clic
+    let button = e.target;
+    //esto me lleva directamente al div padre donde se puede sacar toda la informacion
+    let producto = button.parentElement.parentElement;
+    console.log(producto);
+
+
+}
+
+function comprar(){
+
 }
