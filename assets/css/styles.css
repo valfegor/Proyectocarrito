@@ -136,3 +136,19 @@
     color:gray;
 
    }
+
+   .carrito{
+       position: absolute;
+       min-height:14rem;
+       background-color: var(--primaryColor);
+       margin-top: 57px;
+       right:0;
+       text-align:center;
+       border-radius:0.50rem;
+   }
+
+   .mostrar-carrito{
+       width:35rem;
+       padding:2rem 1.5rem;
+       
+   }
