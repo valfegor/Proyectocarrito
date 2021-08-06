@@ -193,5 +193,32 @@
    }
 
    .carrito-cantidad{
-       
+       width:35%;
+       font-size: 1.2em;
    }
+
+   .carrito-total{
+    text-align: end;
+    margin-top: 10px;
+    padding-left: 35px;
+
+   }
+
+   .carrito-total-precio{
+   
+   }
+
+   .carrito-total-titulo{
+    font-weight: bold;
+    font-size: 1.1em;
+    color: #333;
+    margin-right: 20px;
+   }
+
+   .carrito-total-precio{
+       color: #333;
+       font-size: 1.1em;
+
+   }
+
+   
