@@ -47,7 +47,16 @@ function añadirItems(e){
     let button = e.target;
     //esto me lleva directamente al div padre donde se puede sacar toda la informacion
     let producto = button.parentElement.parentElement;
-    console.log(producto);
+    //en esta parte se pasa el producto se puede utilizar el get element by class name
+    //importante para recordar el getElementsByClassName devuelve un array.
+    //se utilizo el e.target por que hace referencia al boton al cual el usuario hace clic en ese momento
+    //al obtener el parente element es decir el elemento padre en este caso es el contenedor principal.
+    //al ser el contenedor principal se puede acceder a las clases que lo contiene,
+    //como esta clase esta dentro del contenedor se le pasa el [0] por que? por que el contenedor solo tiene esta clase
+    //es decir independientemente de todas las clases que existen dentro de la pagina ese contenedor solo tiene esa clase no tiene mas
+    //por lo tanto es correcto usarlo de esta manera
+    let titulo = producto.getElementsByClassName("producto_titulo")[0].innerText;
+    console.log(titulo);
 
 
 }
