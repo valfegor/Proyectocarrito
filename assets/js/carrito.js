@@ -74,6 +74,11 @@ function añadirItemCarrito(titulo,precio,img){
     let carritoRow = document.createElement("div");
     //le añadimos la clase de carrito-row
     carritoRow.classList.add("carrito-row");
+    //obtenemos el div que tiene la clase carrito-items
+    //recordar que este div de carrito items esta vacio.
+    let carritoItems = document.getElementsByClassName("carrito-items")[0];
+    //obtenemos el div en donde iran a pintarse nuestros items
+    let carritoTitulos = document.getElementsByClassName("carrito-total-titulo");
     
 
 }
