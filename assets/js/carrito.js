@@ -59,8 +59,22 @@ function añadirItems(e){
     let precio = producto.getElementsByClassName("producto_precio")[0].innerText;
     //recordando tambien podemos obtener la imagen.
     let img = producto.getElementsByClassName("producto_imagen")[0].src;
+
     console.log(titulo,precio,img);
 
+    añadirItemCarrito(titulo,precio,img);
+
+
+}
+
+function añadirItemCarrito(titulo,precio,img){
+
+    //aqui vamos a empezar a diagramar los datos que obtenemos los divs.
+    //de esta manera estamos creando un div , mismo que vamos a insertar
+    let carritoRow = document.createElement("div");
+    //le añadimos la clase de carrito-row
+    carritoRow.classList.add("carrito-row");
+    
 
 }
 
