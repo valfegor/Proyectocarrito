@@ -167,7 +167,7 @@ function removerCarritoitem(event){
 //esta funcion se ejecuta tan pronto se elimina totalmente el div padre
 function cambiarCantidad(event){
 
-    //
+    //al boton que yo le de clic va a ejecutar lo siguiente
     var input = event.target;
 
     console.log(input);
@@ -184,17 +184,22 @@ function cambiarCantidad(event){
 //funcion que nos va a actualizar los precios
 function actualizarCarriTotal(){
     //le pasamos un 0 por que solamente existe un elemento padre el es decir un contenedor
+    //es decir cuando agregamos un producto a nuestro carrito , este se va a ubicar dentro del contenedor cart-items que esta vacio
     var carritoItemContenedor = document.getElementsByClassName("carrito-items")[0];
 
     //Aqui en esta parte lo que obtenemos es carrito row
-    //recordemos como esta formado carrito-row.
+    //cuando damos clic en comprar automaticamente se genera un div que nosotros creamos y se insertan automaticamente la foto el precio y el nombre
 
     /*
-      <div class="carrito-row">
-                  <span class="carrito-item carrito-header carrito-column">Item</span>
-                  <span class="carrito-precio carrito-header carrito-column">Precio</span>
-                  <span class="carrito-cantidad carrito-header carrito-column">Cantidad</span>
-                </div>
+     <div class="carrito-item carrito-column">
+    <img class="carrito-item-image" src="${img}>
+    <span class="carrito-item-titulo">${titulo}</span>
+    </div>
+    <span class="carrito-precio carrito-column">${precio}</span>
+    <div class="carrito-cantidad" carrito-column">
+    <input class="carrito-cantidad-input" type="number" value="1">
+    <button class="btn btn-danger" type="button">Elminar</button>
+    </div>
     */
 
     var carritoRows =carritoItemContenedor.getElementsByClassName("carrito-row");
@@ -226,6 +231,7 @@ function actualizarCarriTotal(){
         total = total + precio * cantidad;
 
         console.log(precio);
+        console.log(carritoRows[i]);
 
 
     }
