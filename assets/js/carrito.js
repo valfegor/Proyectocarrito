@@ -227,6 +227,7 @@ function actualizarCarriTotal(){
         var cantidadProducto = carritoRow.getElementsByClassName("carrito-cantidad-input")[0];
 
         //el precio resumiendo es lo que tiene y reemplazamos por le signo dolar
+        //reempezamos el simbolo dolar con nada para transformar en un numero
         var precio = parseFloat(precioProducto.textContent.replace("$",""));
 
         //de esta parte la cantidad hace referencia al input , pero as u valor tambien
