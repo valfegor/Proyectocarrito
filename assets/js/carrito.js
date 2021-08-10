@@ -79,7 +79,43 @@ function añadirItemCarrito(titulo,precio,img){
     let carritoItems = document.getElementsByClassName("carrito-items")[0];
     //obtenemos el div en donde iran a pintarse nuestros items
     let carritoTitulos = document.getElementsByClassName("carrito-total-titulo");
+
+    //realizamos un bucle for.
+
+    for(var i = 0 ; i< carritoItems.length ; i++){
+        if(carritoItems[i].innerText == titulo){
+            alert("Ese producto ya fue añadido");
+        }
+    }
+
+    console.log(img);
     
+    //añadimos lo que vamos a pintar dentro de nuestro div.
+
+    var carritoRowContenedor = `
+    <div class="carrito-item carrito-column">
+    <img class="carrito-item-image" src="${img}>
+    <span class="carrito-item-titulo">${titulo}</span>
+    </div>
+    <span class="carrito-precio carrito-column">${precio}</span>
+    <div class="carrito-cantidad" carrito-column">
+    <input class="carrito-cantidad-input" type="number" value="1">
+    <button class="btn btn-danger" type="button">Elminar</button>
+    </div>
+    `
+
+//al carrito row que es el div que nosotros mismos creamos en la parte superior le vamos a pintar nuestro contenido html.
+carritoRow.innerHTML=carritoRowContenedor;
+
+//luego de eso a carrito items que es el div el fondo azul le vamos a adicionar nuestro div ya con toda la informacion
+carritoItems.append(carritoRow);
+
+//recordar que cuando pintamos en la pantalla tenemos un elemento que se llama el btn y cuando de clic ejecuta la funcion para eliminar
+carritoRow.getElementsByClassName("btn-danger")[0].addEventListener('click', removercarritoitems);
+
+carritoRow.getElementsByClassName("carrito-cantidad-input")[0];
+
+
 
 }
 
