@@ -159,6 +159,39 @@ function removerCarritoitem(event){
 }
 
 //esta funcion se ejecuta tan pronto se elimina totalmente el div padre
-function cambiarCantidad(){
-    
+function cambiarCantidad(event){
+
+    //
+    var input = event.target;
+
+    console.log(input);
+    //aqui decimos si el valor del input no es un numero o el valor del inputo es < a 0
+    if(isNaN(input.value) || input.value<=0){
+        //Esto quiere decir si es negativo o es una letra su valor pasa a ser de 1
+        input.value = 1;
+    }
 }
+
+//funcion que nos va a actualizar los precios
+function actualizarCarriTotal(){
+    //le pasamos un 0 por que solamente existe un elemento padre el es decir un contenedor
+    var carritoItemContenedor = document.getElementsByClassName("carrito-items")[0];
+
+    //Aqui en esta parte lo que obtenemos es carrito row
+    //recordemos como esta formado carrito-row.
+
+    /*
+      <div class="carrito-row">
+                  <span class="carrito-item carrito-header carrito-column">Item</span>
+                  <span class="carrito-precio carrito-header carrito-column">Precio</span>
+                  <span class="carrito-cantidad carrito-header carrito-column">Cantidad</span>
+                </div>
+    */
+
+    var carritoRows =carritoItemContenedor.getElementsByClassName("carrito-row");
+
+    //nuestro total inicializa en 0
+    var total = 0;
+
+    
+}   
