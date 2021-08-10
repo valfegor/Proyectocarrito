@@ -89,17 +89,21 @@ function añadirItemCarrito(titulo,precio,img){
     //obtenemos el div en donde iran a pintarse nuestros items
     let carritoTitulos = carritoItems.getElementsByClassName("carrito-total-titulo");
 
-    console.log(carritoTitulos);
-    //realizamos un bucle for.
-
-    for(var i = 0 ; i< carritoTitulos.length ; i++){
-        
-        if(carritoTitulos[i].innerText == titulo){
-            alert("Ese producto ya fue añadido");
+    for(let i = 0 ; i < carritoTitulos.length;i++){
+        if(carritoTitulos[i] == titulo){
+            return alert("ya ha añadido ese titulo");
         }
     }
 
-    console.log(img);
+    
+
+   console.log(carritoTitulos)
+
+
+    
+    //realizamos un bucle for.
+
+
     
     //añadimos lo que vamos a pintar dentro de nuestro div.
 
