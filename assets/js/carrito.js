@@ -193,5 +193,24 @@ function actualizarCarriTotal(){
     //nuestro total inicializa en 0
     var total = 0;
 
+
+    for(var i = 0 ; i < carritoRows.length ; i++){
+        //añado un for para cada elemento del carritoRow
+        //es decir cada clase que tenga carrito-row
+        var carritoRow = carritoRows[i];
+
+        //obtengo el precio.
+
+        //obtengo la clase carrito precio aqui se lista el precio
+        //solo hay un precio , recordando que el total se muestra en este div y solo existe uno no varios totales
+        var precioProducto = carritoRow.getElementsByClassName("carrito-precio")[0];
+
+        //obtenemos el input de la cantidad
+        var cantidadProducto = carritoRow.getElementsByClassName("carrito-cantidad-input")[0];
+
+
+
+    }
+
     
 }   
