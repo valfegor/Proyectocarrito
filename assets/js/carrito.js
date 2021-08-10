@@ -11,6 +11,7 @@
         carrito.classList.toggle("mostrar-carrito");
     })
 
+    removercarritoitems()
 })();
 
 
@@ -39,6 +40,8 @@ function ready(){
     //funcion para cuando demos clic al boton de comprar
     //se pasa el 0 por que es solamente 1 elemento es decir solo tenemos 1 boton
     document.getElementsByClassName("btn-purchase")[0].addEventListener('click',comprar);
+
+    r
 }
 
 //Esta funcion es ejecutada cuando el usuario da clic a los botones de comprar
@@ -78,12 +81,14 @@ function añadirItemCarrito(titulo,precio,img){
     //recordar que este div de carrito items esta vacio.
     let carritoItems = document.getElementsByClassName("carrito-items")[0];
     //obtenemos el div en donde iran a pintarse nuestros items
-    let carritoTitulos = document.getElementsByClassName("carrito-total-titulo");
+    let carritoTitulos = carritoItems.getElementsByClassName("carrito-total-titulo");
 
+    console.log(carritoTitulos);
     //realizamos un bucle for.
 
-    for(var i = 0 ; i< carritoItems.length ; i++){
-        if(carritoItems[i].innerText == titulo){
+    for(var i = 0 ; i< carritoTitulos.length ; i++){
+        
+        if(carritoTitulos[i].innerText == titulo){
             alert("Ese producto ya fue añadido");
         }
     }
@@ -113,7 +118,8 @@ carritoItems.append(carritoRow);
 //recordar que cuando pintamos en la pantalla tenemos un elemento que se llama el btn y cuando de clic ejecuta la funcion para eliminar
 carritoRow.getElementsByClassName("btn-danger")[0].addEventListener('click', removercarritoitems);
 
-carritoRow.getElementsByClassName("carrito-cantidad-input")[0];
+//asi mismo obtenemos el input que tiene la cantidad
+carritoRow.getElementsByClassName("carrito-cantidad-input")[0].addEventListener('click',cambiarCantidad);
 
 
 
@@ -121,4 +127,38 @@ carritoRow.getElementsByClassName("carrito-cantidad-input")[0];
 
 function comprar(){
 
+}
+
+//funcion elminar los items
+function removercarritoitems(){
+    //creamos una vairable buscando el boton
+    //esta clase contiene todos los botones que se creen del div
+    var eliminarItems = document.getElementsByClassName("btn-danger");
+
+    //como es un html collection es decir un array de elementos procedo
+    //para cada uno dar un clic
+    for(var i = 0; i < eliminarItems.length; i++){
+        var button = eliminarItems[i];
+        //creamos el event listenes.
+
+        button.addEventListener('click',removerCarritoitem);
+    }
+}
+
+//esta es la funcion que vamos a utilizar para eliminar los items del carrito
+//le pasamos el parametro event pues haremos uso de el
+function removerCarritoitem(event){
+    var botonclicleado = event.target;
+    //eliminamos el div que lo contiene.
+    //es decir el div que nosotros creamos mas arriba carrito row
+    //este mismo boton al darle clic me lleva al elemento padre,
+    //recordar que este mismo elemento fue creado con html desde una variable
+    console.log(botonclicleado.parentElement.parentElement);
+    botonclicleado.parentElement.parentElement.remove();
+    console.log(botonclicleado);
+}
+
+//esta funcion se ejecuta tan pronto se elimina totalmente el div padre
+function cambiarCantidad(){
+    
 }
