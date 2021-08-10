@@ -67,6 +67,12 @@ function añadirItems(e){
 
     añadirItemCarrito(titulo,precio,img);
 
+    actualizarCarriTotal();
+
+    //aqui colocamos la funcion que creamos de actualizar carrito ya que al dar clic al boton de comprar se ejecuta automaticamente.
+
+
+
 
 }
 
@@ -170,6 +176,9 @@ function cambiarCantidad(event){
         //Esto quiere decir si es negativo o es una letra su valor pasa a ser de 1
         input.value = 1;
     }
+
+    //pasamos la funcion
+    actualizarCarriTotal()
 }
 
 //funcion que nos va a actualizar los precios
@@ -208,9 +217,23 @@ function actualizarCarriTotal(){
         //obtenemos el input de la cantidad
         var cantidadProducto = carritoRow.getElementsByClassName("carrito-cantidad-input")[0];
 
+        //el precio resumiendo es lo que tiene y reemplazamos por le signo dolar
+        var precio = parseFloat(precioProducto.textContent.replace("$",""));
+
+        //de esta parte la cantidad hace referencia al input , pero as u valor tambien
+        var cantidad = cantidadProducto.value;
+
+        total = total + precio * cantidad;
+
+        console.log(precio);
 
 
     }
+
+    total = Math.round(total*100)/100;
+
+    //obtengo la clase carrito-total-precio en este caso es solo 1 es el span donde se ubica el precio , y le pintamos un $ y la variable total
+    document.getElementsByClassName("carrito-total-precio")[0].innerText = "$" + total;
 
     
 }   
