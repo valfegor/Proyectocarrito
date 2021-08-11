@@ -46,7 +46,9 @@ function ready(){
     //hacemos un for para recorrer cada uno de los inputs.
 
     for(var j = 0 ; cantidadInputs.length ;j++){
-         
+         var input = cantidadInputs[j];
+
+         input.addEventListener("change",cantidadCambiada());
     }
 }
 
@@ -145,8 +147,23 @@ carritoRow.getElementsByClassName("btn-danger")[0].addEventListener('click', rem
 carritoRow.getElementsByClassName("carrito-cantidad-input")[0].addEventListener('click',cambiarCantidad);
 
 
+cantidadCambiada()
 
+}
 
+function cantidadCambiada(){
+    //almacenamos en una variable nuestro carrito contenedor.
+    //recordemos que es solo 1 clase 
+    var carritoItemContainer = document.getElementsByClassName("cart-items")[0];
+    //recordemos que este es el div que contiene los items como el nombre del titulo , imagen
+    var carritoRows = carritoItemContainer.getElementsByClassName("carrito-row");
+    var total = 0;
+
+    //hacemos un ciclo for.
+    for(var i = 0; i < carritoRows.length; i++){
+        //almacenamos en una variable.
+        
+    }
 }
 
 function comprar(){
@@ -197,6 +214,7 @@ function cambiarCantidad(event){
 
     //pasamos la funcion
     actualizarCarriTotal()
+    cantidadCambiada()
 }
 
 //funcion que nos va a actualizar los precios
