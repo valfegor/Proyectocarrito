@@ -42,6 +42,7 @@ function ready(){
     document.getElementsByClassName("btn-purchase")[0].addEventListener('click',comprar);
 
     var cantidadInputs = document.getElementsByClassName("carrito-cantidad-input")[0];
+    console.log(cantidadInput); 
 
     //hacemos un for para recorrer cada uno de los inputs.
 
@@ -151,10 +152,12 @@ cantidadCambiada()
 
 }
 
+//esto lo que hace es cambiar la cantidad en el carrito de compras.
 function cantidadCambiada(){
-    //almacenamos en una variable nuestro carrito contenedor.
+      //almacenamos en una variable nuestro carrito contenedor.
     //recordemos que es solo 1 clase 
-    var carritoItemContainer = document.getElementsByClassName("cart-items")[0];
+
+    var carritoItemContainer = document.getElementsByClassName("carrito-items")[0];
     //recordemos que este es el div que contiene los items como el nombre del titulo , imagen
     var carritoRows = carritoItemContainer.getElementsByClassName("carrito-row");
     var total = 0;
@@ -171,7 +174,10 @@ function cantidadCambiada(){
         var cantidad = cantidadElemento.value;
 
         var total = total + parseInt(cantidad)
+        console.log(cantidadElemento)
     }
+   
+    document.getElementById("contador_item").innerText = total;
 }
 
 function comprar(){
@@ -192,6 +198,10 @@ function removercarritoitems(){
 
         button.addEventListener('click',removerCarritoitem);
     }
+
+    actualizarCarriTotal()
+    cantidadCambiada()
+
 }
 
 //esta es la funcion que vamos a utilizar para eliminar los items del carrito
