@@ -41,7 +41,13 @@ function ready(){
     //se pasa el 0 por que es solamente 1 elemento es decir solo tenemos 1 boton
     document.getElementsByClassName("btn-purchase")[0].addEventListener('click',comprar);
 
-    r
+    var cantidadInputs = document.getElementsByClassName("carrito-cantidad-input")[0];
+
+    //hacemos un for para recorrer cada uno de los inputs.
+
+    for(var j = 0 ; cantidadInputs.length ;j++){
+         
+    }
 }
 
 //Esta funcion es ejecutada cuando el usuario da clic a los botones de comprar
@@ -80,24 +86,31 @@ function añadirItemCarrito(titulo,precio,img){
 
     //aqui vamos a empezar a diagramar los datos que obtenemos los divs.
     //de esta manera estamos creando un div , mismo que vamos a insertar
-    let carritoRow = document.createElement("div");
+    var carritoRow = document.createElement("div");
     //le añadimos la clase de carrito-row
     carritoRow.classList.add("carrito-row");
     //obtenemos el div que tiene la clase carrito-items
     //recordar que este div de carrito items esta vacio.
-    let carritoItems = document.getElementsByClassName("carrito-items")[0];
+    var carritoItems = document.getElementsByClassName("carrito-items")[0];
     //obtenemos el div en donde iran a pintarse nuestros items
-    let carritoTitulos = carritoItems.getElementsByClassName("carrito-total-titulo");
+    
+    var prueba = carritoItems.getElementsByClassName("carrito-item");
 
-    for(let i = 0 ; i < carritoTitulos.length;i++){
-        if(carritoTitulos[i] == titulo){
-            return alert("ya ha añadido ese titulo");
+    for(var i = 0; i < prueba.length;i++){
+        let resultado = prueba[i];
+
+        if(resultado==carritoItems){
+            return alert("no es posible");
         }
+        
+        console.log(resultado.children);
     }
-
+    
+    console.log(carritoItems,prueba);
+   
     
 
-   console.log(carritoTitulos)
+   
 
 
     
@@ -130,6 +143,7 @@ carritoRow.getElementsByClassName("btn-danger")[0].addEventListener('click', rem
 
 //asi mismo obtenemos el input que tiene la cantidad
 carritoRow.getElementsByClassName("carrito-cantidad-input")[0].addEventListener('click',cambiarCantidad);
+
 
 
 
