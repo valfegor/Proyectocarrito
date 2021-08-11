@@ -162,7 +162,15 @@ function cantidadCambiada(){
     //hacemos un ciclo for.
     for(var i = 0; i < carritoRows.length; i++){
         //almacenamos en una variable.
-        
+        var carritofila = carritoRows[i];
+        //Obtenemos el elemento de la cantidad.
+        var cantidadElemento = carritofila.getElementsByClassName("carrito-cantidad-input")[0];
+
+        //obtenemos la cantidad directamente del input la cantidad.
+
+        var cantidad = cantidadElemento.value;
+
+        var total = total + parseInt(cantidad)
     }
 }
 
